@@ -5,15 +5,17 @@ const less = require('gulp-less');
 const del = require('del');
 const debug = require('gulp-debug');
 const autoprefixer = require('gulp-autoprefixer');
-// const newer = require('gulp-newer');
-// const remember = require('gulp-remember');
-// const cached = require('gulp-cached');
+const newer = require('gulp-newer');
+const remember = require('gulp-remember');
+const cached = require('gulp-cached');
 const path = require('path');
 const browserSync = require('browser-sync').create();
 const pug = require('gulp-pug');
+const order = require("gulp-order");
 const concat = require('gulp-concat');
 const minifyCSS = require('gulp-minify-css');
 const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
 
 
 gulp.task('styles', function() {
@@ -22,7 +24,7 @@ gulp.task('styles', function() {
     .pipe(autoprefixer())   
     .pipe(less())
     .pipe(minifyCSS())
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('public'));
 });
 
@@ -38,19 +40,24 @@ gulp.task('wiews', function() {
 })
 
 gulp.task('scripts', function() {
-    return gulp.src('frontend/**/*.js')
+    return gulp.src(['frontend/**/*.js'])
         .pipe(sourcemaps.init())    
         .pipe(debug({title: 'scripts'}))
+        .pipe(order([
+            'frontend/libs/jquery-1.9.1.min.js',
+            'frontend/**/*.js'
+        ]))
+        .pipe(uglify())
         .pipe(concat('./scripts/main.js'))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('public'));
 });
 
 gulp.task('assets', function() {
     return gulp.src('frontend/assets/**')
-        // .pipe(cached('assets')) 
-        // .pipe(remember('assets'))   
-        // .pipe(newer('public'))
+        .pipe(cached('assets')) 
+        .pipe(remember('assets'))   
+        .pipe(newer('public'))
         .pipe(debug({title: 'assets'}))
         .pipe(gulp.dest('public'));
 });

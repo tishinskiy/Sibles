@@ -2,8 +2,11 @@
 
 (function () {
 
-    $(document).ready(function(){
 
+    $(document).ready(function(){
+        $(".callback-button").click(function(){
+            $.fancybox.open($('.modal-wrap'), {});
+        })
         $(".top-search").click(function(){
             $(this).addClass('seach-active');
         });
