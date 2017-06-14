@@ -1,0 +1,33 @@
+.header-block
+    .container.header-block__container
+        header
+            .logo.header-logo
+                a(href="/")
+                    img(src="./images/logo.png", alt="")
+            .top-menu
+                .top-menu_list
+                    each val in ["Проекты", "Продукция", "О компании", "Контакты"]
+                        .top-menu_item
+                            a(href="javascript:;")
+                                span= val
+            .top-search
+                .seach-form
+                    form(action="")
+                        input(
+                            type='text'
+                            placeholder='Введите фразу для поиска'
+                        )
+                        button(
+                            type='submit'
+                        ) Поиск
+            .top-callback_wrap
+                a(
+                    href="javascript:;"
+                    class="callback-button button_1"
+                ) Заказать проект
+            .top-phone
+                p +7 383 212 5973
+        
+
+                
+        

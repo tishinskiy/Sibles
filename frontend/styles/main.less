@@ -1,0 +1,90 @@
+@import './blocks/slick.less';
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.size(@width, @height) {
+    width: ~"@{width}px";
+    height: ~"@{height}px";
+}
+
+.circle(@radis, @height) {
+    width: ~"@{radus}px";
+    height: ~"@{radus}px";
+    border-radius: 50%; 
+}
+
+.clearfix {
+    &:after {
+        content:'';
+        display: table-cell;
+    }
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear:both;
+}
+
+
+// -------------------------------------------------
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-family: "Arial";
+    font-size: 18px;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .page-wrap {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .content-block {
+            flex-grow: 1;
+        }
+        
+    }
+}
+
+
+h1 {
+    text-transform: uppercase;
+    color: #777;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.container {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+.button_1 {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    border: 5px solid rgba(0, 0, 0, 0.3);
+}
