@@ -24,7 +24,7 @@ gulp.task('styles', function() {
     .pipe(autoprefixer())   
     .pipe(less())
     .pipe(minifyCSS())
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('public'));
 });
 
@@ -41,7 +41,10 @@ gulp.task('wiews', function() {
 
 gulp.task('scripts', function() {
     return gulp.src(['frontend/**/*.js'])
-        .pipe(sourcemaps.init())    
+        .pipe(sourcemaps.init()) 
+        .pipe(cached('scripts')) 
+        .pipe(remember('scripts'))   
+        .pipe(newer('scripts'))   
         .pipe(debug({title: 'scripts'}))
         .pipe(order([
             'frontend/libs/jquery-1.9.1.min.js',
@@ -49,15 +52,15 @@ gulp.task('scripts', function() {
         ]))
         .pipe(uglify())
         .pipe(concat('./scripts/main.js'))
-        .pipe(sourcemaps.write('.'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('public'));
 });
 
 gulp.task('assets', function() {
-    return gulp.src('frontend/assets/**')
+    return gulp.src('frontend/assets/**', {since: gulp.lastRun('assets')})
         .pipe(cached('assets')) 
         .pipe(remember('assets'))   
-        .pipe(newer('public'))
+        .pipe(newer('assets'))
         .pipe(debug({title: 'assets'}))
         .pipe(gulp.dest('public'));
 });

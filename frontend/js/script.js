@@ -15,12 +15,18 @@
 
             if($(".seach-active").length) {
                if($(e.target).closest(".top-search").length === 0) {
-                //    console.log($(e.target).closest("div.top-search"));
                    $(".seach-active").removeClass("seach-active");
                }
             }
         })
 
-
+        $('#top-slider').slick({
+            fade: true,
+            speed: 2000,
+            dots: true,
+            arrows:false,
+            autoplay: true,
+            appendDots: $("#slider-pager"),
+        });
     });
 })();

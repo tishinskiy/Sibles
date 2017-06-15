@@ -1,1 +1,23 @@
-p advantage
+.advantage-block
+    .container
+        .advantage-list
+            mixin adv-i(img, desc)
+                .advantage-item
+                    .advantage-item-img
+                        img(
+                            src = img
+                        )   
+                    .advantage-item-desc
+                        p!= desc
+            +adv-i(
+                '../images/advantage-1.png', 
+                'только качественные <br> материалы при производстве'
+            )
+            +adv-i(
+                '../images/advantage-2.png', 
+                'внимание к деталям: <br>аккуратно, точно, в срок'
+            )
+            +adv-i(
+                '../images/advantage-3.png', 
+                'ответственность: <br>строим как для себя'
+            )

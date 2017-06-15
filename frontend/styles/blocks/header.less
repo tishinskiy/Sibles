@@ -128,7 +128,31 @@ header {
     margin-left: 20px;
 }
 .callback-button {
+    position: relative;
 
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        margin-top: -2px;
+        background: #CD6A5A;
+    }
+
+    &:before {
+        left: 15px;
+    }
+    &:after {
+        right: 15px;
+    }
+
+    &:hover {
+        &:before, &:after {
+            background: #fff;
+        }
+    }
 }
 
 .top-phone {
