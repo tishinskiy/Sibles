@@ -1,0 +1,16 @@
+.projects-header
+    .text-center
+        h2 наши проекты
+        nav.projects-links
+            a(
+                    href="javascript:;"
+                    class="project-links-item active"
+                )
+                    span  коттеджи
+            each val in ["дома", "бани"]
+                
+                a(
+                    href="javascript:;"
+                    class="project-links-item"
+                )
+                    span=val

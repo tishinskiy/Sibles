@@ -16,13 +16,17 @@ const concat = require('gulp-concat');
 const minifyCSS = require('gulp-minify-css');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+const notify = require( 'gulp-notify' );
 
 
 gulp.task('styles', function() {
     return gulp.src(['frontend/**/*.less', '!frontend/**/blocks/**/*.less', "!frontend/**/main.less"])
     .pipe(sourcemaps.init())
     .pipe(autoprefixer())   
-    .pipe(less())
+    .pipe(less().on ('error', notify.onError({
+            message: "<%= error.message %>",
+            title  : "Less Error!"
+        })))
     .pipe(minifyCSS())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('public'));
@@ -35,7 +39,10 @@ gulp.task('clean', function() {
 gulp.task('wiews', function() {
     return gulp.src(['frontend/wievs/*.pug', '!frontend/**/includes/*.*']) 
         // .pipe(newer('public'))         
-        .pipe(pug())
+        .pipe(pug().on ('error', notify.onError({
+            message: "<%= error.message %>",
+            title  : "Pug Error!"
+        })))
         .pipe(gulp.dest('public'));
 })
 
