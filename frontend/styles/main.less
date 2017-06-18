@@ -3,122 +3,184 @@
 
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 
 
 .size(@width, @height) {
-    width: ~"@{width}px";
-    height: ~"@{height}px";
+	width: ~"@{width}px";
+	height: ~"@{height}px";
 }
 
 .circle(@radis, @height) {
-    width: ~"@{radus}px";
-    height: ~"@{radus}px";
-    border-radius: 50%; 
+	width: ~"@{radus}px";
+	height: ~"@{radus}px";
+	border-radius: 50%; 
 }
 
 .clearfix {
-    &:after {
-        content:'';
-        display: table-cell;
-    }
+	&:after {
+		content:'';
+		display: table;
+		clear: both;
+	}
 }
 
 .left {
-    float: left;
+	float: left;
 }
 
 .right {
-    float: right;
+	float: right;
 }
 
 .clear {
-    clear:both;
+	clear:both;
 }
 
 
 // -------------------------------------------------
 
 html {
-    height: 100%;
+	min-height: 100% !important;
 }
 
 body {
-    min-height: 100%;
-    font-family: 'PT Sans', sans-serif, Arial;
-    font-size: 18px;
-    color: #555;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	min-height: 100%;
+	font-family: 'PT Sans', sans-serif, Arial;
+	font-size: 15px;
+	color: #4a4a4a;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
-    .page-wrap {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+	.page-wrap {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
 
-        .content-block {
-            flex-grow: 1;
-        }
-        
-    }
+		.content-block {
+			flex-grow: 1;
+		}
+		
+	}
 }
 .second-font {font-family: 'Exo 2', sans-serif, Arial;}
 
 
 h1 {
-    text-transform: uppercase;
-    color: #777;
-    font-weight: bold;
-    font-size: 40px;
+	text-transform: uppercase;
+	color: #777;
+	font-weight: bold;
+	font-size: 40px;
 }
 
 h2 {
-    .second-font;
-    font-size: 23px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #4a4a4a;
+	.second-font;
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #4a4a4a;
 }
 
 .container {
-    width: 1180px;
-    margin: 0 auto;
+	width: 1180px;
+	margin: 0 auto;
 }
 
 .site-block {
-    padding-top: 70px;
-    padding-bottom: 70px;
+	padding-top: 70px;
+	padding-bottom: 70px;
 }
 
 .text-center {
-    text-align: center;
+	text-align: center;
 }
 
 .button_1 {
-    display: inline-block;
-    text-decoration: none;
-    padding: 0px 30px;
-    height: 43px;
-    text-transform: uppercase;
-    border: 2px solid #CD6A5A;
-    line-height: 39px;
-    font-size: 14px;
-    color: #c25039;
-    text-transform: uppercase;
-    .second-font;
-    border-radius: 4px;
-    font-weight: 500;
-    outline: none;
-    cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	padding: 0px 30px;
+	height: 43px;
+	text-transform: uppercase;
+	border: 2px solid #CD6A5A;
+	line-height: 39px;
+	font-size: 14px;
+	color: #c25039;
+	background: #fff;
+	text-transform: uppercase;
+	.second-font;
+	border-radius: 4px;
+	font-weight: 500;
+	outline: none;
+	cursor: pointer;
 
-    &:hover {
-        background: #c25039;
-        color: #fff;
-    }
+	&:hover {
+		background: #c25039;
+		color: #fff;
+	}
+}
+.button_2 {
+	display: inline-block;
+	text-decoration: none;
+	padding: 0px 30px;
+	height: 43px;
+	text-transform: uppercase;
+	border: 2px solid #e3e860;
+	line-height: 39px;
+	font-size: 14px;
+	color: #e3e860;
+	background: transparent;
+	text-transform: uppercase;
+	.second-font;
+	border-radius: 4px;
+	font-weight: 500;
+	outline: none;
+	cursor: pointer;
+
+	&:hover {
+		background: #e3e860;
+		color: #515151;
+	}
+}
+
+.fancybox-close-small, .modal-close {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: 2px solid #99BD51;
+	position: absolute;
+	background: transparent;
+	outline: none;
+	cursor: pointer;
+
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -7px;
+		margin-left: -1px;
+		width: 2px;
+		height: 14px;
+		background: #99BD51;
+	}
+	&:before {
+		transform: rotate(45deg);
+	}
+
+	&:after {
+		transform: rotate(-45deg);
+	}
+
+	&:hover {
+		border-color: #C0503F;
+		&:before, &:after{
+			background: #C0503F;
+		}
+	}
 }

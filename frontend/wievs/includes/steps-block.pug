@@ -1,0 +1,43 @@
+.steps-block.site-block
+	.container
+		.reference-list
+			-
+				var items = [
+					{
+						name: 'проектирование',
+						img: 'step-1.png',
+						modal: false
+
+					},
+					{
+						name: 'строительство',
+						img: 'step-2.png',
+						modal: false
+					},
+					{
+						name: 'дизайн',
+						img: 'step-3.png',
+						modal: false
+					},
+					{
+						name: 'Под ключ',
+						img: 'step-4.png',
+						modal: false
+					}
+				]
+			-
+
+			each val in items
+
+				.reference-item-wrap
+					.reference-item
+						.reference-img
+							img(src="../images/"+val.img,  alt="")
+						.reference-name
+							p=val.name
+						if val.modal
+							.reference-modal
+								.reference-modal-close.modal-close
+								.reference-modal-header
+									p=val.name
+								p=val.modal

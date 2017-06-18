@@ -1,0 +1,42 @@
+.workcomrlex-block.site-block
+	.container 
+		.text-center
+			h2 работаем под ключ!
+		.workcomplex-list
+			-
+				var items = [
+					{
+						name: 'проектирование',
+						img: 'workcomplex-1.png',
+						desc: 'Разрабатываем проекты <br>деревянных домов и бань'
+
+					},
+					{
+						name: 'строительные работы',
+						img: 'workcomplex-2.png',
+						desc: 'Комплексные строительные <br>работы любой сложности'
+
+					},
+					{
+						name: 'производство бруса',
+						img: 'workcomplex-3.png',
+						desc: 'Изготовление клееного <br>и профилированного бруса'
+
+					},
+					{
+						name: 'отделочные работы',
+						img: 'workcomplex-4.png',
+						desc: 'Внутренняя отделка помещений <br>в соответствии с выбранным <br>дизайном'
+
+					},
+				]
+			-
+			each val in items
+				.workcomplex-item-wrap
+					.workcomplex-item
+						.workcomplex-item-img
+							img(src="./images/"+val.img)
+						.workcomplex-desc
+							.workcomplex-name
+								p=val.name
+							p!=val.desc

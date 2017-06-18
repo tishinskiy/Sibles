@@ -38,7 +38,9 @@ gulp.task('clean', function() {
 
 gulp.task('wiews', function() {
     return gulp.src(['frontend/wievs/*.pug', '!frontend/**/includes/*.*']) 
-        // .pipe(newer('public'))         
+        // .pipe(cached('wievs')) 
+        // .pipe(remember('wievs'))   
+        .pipe(newer('wievs'))           
         .pipe(pug().on ('error', notify.onError({
             message: "<%= error.message %>",
             title  : "Pug Error!"
@@ -56,7 +58,10 @@ gulp.task('scripts', function() {
         .pipe(order([
             'frontend/libs/jquery-1.9.1.min.js',
             'frontend/**/*.js'
-        ]))
+        ]).on ('error', notify.onError({
+            message: "<%= error.message %>",
+            title  : "Pug Error!"
+        })))
         .pipe(uglify())
         .pipe(concat('./scripts/main.js'))
         .pipe(sourcemaps.write())

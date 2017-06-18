@@ -1,0 +1,36 @@
+.rewievs-block.site-block
+	.container
+		.text-center
+			h2 клиенты о нас
+		.rewievs-list
+			-
+				var items =[
+					{
+						name: 'семья ивановых',
+						img: 'rewiev-1.jpg',
+						city: 'Бердск'
+					},
+					{
+						name: 'семья потаповичей',
+						img: 'rewiev-2.jpg',
+						city: 'Новосибирск'
+					},
+					{
+						name: 'Жюль и василиса верновы',
+						img: 'rewiev-3.jpg',
+						city: 'Новосибирск'
+					}
+				]
+			-
+
+			each val in items
+				.rewiev-item
+					.rewiew-image
+						img(src="./images/"+val.img)
+					.rewiew-city
+						p=val.city
+					a.rewiev-name(
+							href="javascript:;"
+						)=val.name
+		.text-center
+			a(href="javascript:;").more-projects-button перейти к проектам домов

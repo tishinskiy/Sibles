@@ -1,0 +1,13 @@
+.form-block
+
+	.form-header
+		p=form.header
+	form(action="")
+		.form-content
+			each val in form.fields
+				.form-field
+					input(
+						type=val.type
+						placeholder=val.placeholder
+						value=val.value
+					)

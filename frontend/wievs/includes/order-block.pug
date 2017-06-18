@@ -1,0 +1,36 @@
+.order-block
+	.container
+		.order-header-wrap
+			.order-header
+				h2 Хочется дом по своему проекту?
+				p ПРИШЛИТЕ ФОТО ДОМА ВАШЕЙ МЕЧТЫ, МОЖНО ДАЖЕ ОБЫЧНУЮ КАРТИНКУ ИЗ ИНТЕРНЕТА И МЫ РАССЧИТАЕМ ЕГО СТОИМОСТЬ ДЛЯ ВАС!
+		.order-form-wrap
+			-
+				var form = {
+					header: 'рассчитать стоимость по фото:',
+					fields: [
+						{
+							type: 'text',
+							placeholder: 'ваше имя',
+							value: false,
+						},
+						{
+							type: 'text',
+							placeholder: 'телефон',
+							value: false,
+						},
+						{
+							type: 'file',
+							placeholder: false,
+							value: false,
+						},
+						{
+							type: 'submit',
+							placeholder: false,
+							value: 'отправить',
+						}
+					],
+				}
+			-
+			include callback-form.pug
+

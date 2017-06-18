@@ -1,0 +1,83 @@
+.form-block {
+
+}
+.form-header {
+	text-align: center;
+	color: #fff;
+	.second-font;
+	font-weight: bold;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.form-content {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin-top: 35px;
+}
+.form-field {
+	margin: 0 5px;
+	padding: 5px;
+	background: rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+	font-size: 0;
+
+	input {
+		border-radius: 5px;
+		height: 38px;
+		border: 0;
+		outline: none;
+		font-size: 15px;
+		text-transform: uppercase;
+		.second-font;
+	}
+
+	input[type="text"] {
+		background: #fff;
+		width: 268px;
+		padding: 10px;
+		color: #4a4a4a;
+	}
+
+	.jq-file {
+		width: 38px;
+		height: 38px;
+		border-radius: 5px;
+		background: url("../images/file-bg.png") center no-repeat;
+		position: relative;
+		overflow: visible !important;
+
+		input[type='file'] {
+			cursor: pointer;
+		}
+
+		.jq-file__browse {display: none;}
+
+		.jq-file__name {
+			position: absolute;
+			top: 100%;
+			right: 20px;
+			width: 1000px;
+			margin-top: 10px;
+			padding-top: 14px;
+			padding-right: 40px;
+			text-align: right;
+			font-size: 14px;
+			color: #fff;
+			background: url("../images/filename-bg.png") right top no-repeat;
+
+		}
+	}
+
+	input[type="submit"] {
+		padding: 0 50px;
+		background: #B9091F;
+		color: #fff;
+		font-size: 15px;
+		text-transform: uppercase;
+		.second-font;
+		font-weight: 500;
+		cursor: pointer;
+	}
+}

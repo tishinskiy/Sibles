@@ -1,0 +1,80 @@
+.footer-block
+	.container
+		footer
+			.logo-min
+				a(href="javascript")
+					img(src="../images/logo-min.png")
+			.bottom-menu
+				-
+					var menu = [
+						{
+							title: 'проекты',
+							selected: true,
+							url: 'javascript:;',
+							submenu: [
+								{
+									title: 'Дома',
+									url: 'javascript:;',
+								},
+								{
+									title: 'Коттеджи',
+									url: 'javascript:;',
+								},
+								{
+									title: 'Бани',
+									url: 'javascript:;',
+								},
+							]
+						},
+						{
+							title: 'продукция ',
+							url: 'javascript:;',
+							submenu: [
+								{
+									title: 'Клеенный брус',
+									url: 'javascript:;',
+								},
+								{
+									title: 'Профилированный брус',
+									url: 'javascript:;',
+								},
+							]
+						},
+						{
+							title: 'о компании',
+							url: 'javascript:;',
+						},
+						{
+							title: 'Контакты',
+							url: 'javascript:;',
+						},
+					]
+				-
+
+				mixin navbar(menu)
+					ul
+						each item in menu
+							if item.selected
+								li.active
+									a(href=item.url)
+										span=item.title
+										if item.submenu
+											+navbar(item.submenu)
+							else
+								li
+									a(href=item.url)
+										span=item.title
+										if item.submenu
+											+navbar(item.submenu)
+
+				+navbar(menu)
+			.footer-right-block
+				.phone.phone__footer
+					p +7 383 212 5973
+				a.callback-button.button_2(href="javascript:;") заказать проект
+				.creation
+					p Разработка и продвижение: 
+						a.made(href="javascript:;")
+							img(src="./images/made.png")
+					p
+						a(href="javascript:;") Политика конфиденциальности

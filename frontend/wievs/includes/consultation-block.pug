@@ -1,0 +1,30 @@
+.consultation-block
+	.container
+		.order-header-wrap
+			.order-header
+				h2 Узнайте всё о домах из клееного <br>и цельного профилированного бруса
+				p ПОЛУЧИТЕ КОНСУЛЬТАЦИЮ СПЕЦИАЛИСТА ИЗ ПЕРВЫХ РУК. ЗАДАЙТЕ ВОПРОСЫ, РАССКАЖИТЕ О ПЛАНАХ СТРОИТЕЛЬСТВА - МЫ ПОМОЖЕМ ИХ РЕАЛИЗОВАТЬ!	
+		.order-form-wrap
+			-
+				var form = {
+					header: 'получить консультацию специалиста:',
+					fields: [
+						{
+							type: 'text',
+							placeholder: 'ваше имя',
+							value: false,
+						},
+						{
+							type: 'text',
+							placeholder: 'телефон',
+							value: false,
+						},
+						{
+							type: 'submit',
+							placeholder: false,
+							value: 'получить консультацию',
+						}
+					],
+				}
+			-
+			include callback-form.pug
