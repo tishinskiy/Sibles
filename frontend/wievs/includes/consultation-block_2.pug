@@ -1,0 +1,30 @@
+.consultation-block_2
+	.container
+		.order-header-wrap
+			.order-header
+				h2 получите консультацию и Узнайте <br>о сезонной акции при заказе<br>этого проекта
+				p получите консультацию специалиста из первых рук.<br>задайте вопросы, расскажите о планах строительства - мы<br>поможем их реализовать
+		.order-form-wrap
+			-
+				var form = {
+					header: 'оставить заявку на расчет стоимости проекта:',
+					fields: [
+						{
+							type: 'text',
+							placeholder: 'ваше имя',
+							value: false,
+						},
+						{
+							type: 'text',
+							placeholder: 'телефон',
+							value: false,
+						},
+						{
+							type: 'submit',
+							placeholder: false,
+							value: 'получить консультацию',
+						}
+					],
+				}
+			-
+			include callback-form.pug

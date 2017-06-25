@@ -1,7 +1,7 @@
 .form-block
-
-	.form-header
-		p=form.header
+	if form.header
+		.form-header
+			p=form.header
 	form(action="")
 		.form-content
 			each val in form.fields

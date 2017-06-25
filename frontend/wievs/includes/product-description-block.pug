@@ -1,0 +1,60 @@
+.product-description-block
+	.container
+		.product-description
+			.product-main-img
+				img(src="./images/product-main-img.jpg")
+			.rpoduct-main-option
+				h2 уютный деревянный жилой дом <br>с отдельным рабочим кабинетом...
+				br
+				p ... несколькими спальнями, просторной гостиной. Встраиваемые шкафы на первом этаже позволят сэкономить жилое пространство, эркер в обеденной зоне расширит помещение.
+				br
+				p В доме можно установить камин или устроить зимний сад.
+
+				.product-main-params
+					p
+						strong цена:
+						| от 3 030 000 руб.
+					p
+						strong цена за м
+							sup 2
+						| от 3 030 000 руб.
+					br
+					p
+						strong материал:
+						| клееный брус или профилированный брус
+					br
+					p
+						strong сечение:
+						| 133(h) х 220
+					p
+						strong Объем бруса:
+						| 155 м
+						sup 3
+					p
+						strong общая площадь дома:
+						| 220
+						sup 2
+				.product-oder-form
+					-
+						var form = {
+							header: false,
+							fields: [
+								{
+									type: 'text',
+									placeholder: 'ваше имя',
+									value: false,
+								},
+								{
+									type: 'text',
+									placeholder: 'телефон',
+									value: false,
+								},
+								{
+									type: 'submit',
+									placeholder: false,
+									value: 'заказать',
+								}
+							],
+						}
+					-
+					include callback-form.pug

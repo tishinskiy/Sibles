@@ -24,16 +24,16 @@
 	font-size: 0;
 
 	input {
-		border-radius: 5px;
-		height: 38px;
-		border: 0;
+	}
+
+	input[type="text"] {
 		outline: none;
 		font-size: 15px;
 		text-transform: uppercase;
 		.second-font;
-	}
-
-	input[type="text"] {
+		border-radius: 5px;
+		height: 38px;
+		border: 0;
 		background: #fff;
 		width: 268px;
 		padding: 10px;
@@ -50,6 +50,7 @@
 
 		input[type='file'] {
 			cursor: pointer;
+			overflow: hidden;
 		}
 
 		.jq-file__browse {display: none;}
@@ -71,17 +72,6 @@
 	}
 
 	input[type="submit"] {
-		padding: 0 50px;
-		background: #B9091F;
-		color: #fff;
-		font-size: 15px;
-		text-transform: uppercase;
-		.second-font;
-		font-weight: 500;
-		cursor: pointer;
-
-		&:hover {
-			background: #A60818;
-		}
+		.button_3;
 	}
 }

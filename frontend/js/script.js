@@ -4,7 +4,7 @@
 
 
 	$(document).ready(function(){
-		$(".callback-button").click(function(){
+		$(".callback-button, .callback-button-light").click(function(){
 			$.fancybox.open($('.modal-wrap'), {});
 		})
 		$(".top-search").click(function(){
@@ -26,7 +26,7 @@
 
 		$(".reference-item-link").click(function(){
 			$(this).toggleClass('show');
-			
+
 			$(".reference-item-link").each(function(){
 				if($(this).hasClass('show')) {
 					$(this).next(".reference-modal").fadeOut('fast');
@@ -46,6 +46,19 @@
 				appendDots: pager,
 			});
 		});
+
+		if($("#carousel-list").length) {
+			$('#carousel-list').slick({
+				autoplay: true,
+				centerMode: true,
+				centerPadding: '30px',
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				dots: false,
+				// arrows:false,
+				variableWidth: true
+			})
+		}
 
 
 		$(".form-block input[type='file']").styler({

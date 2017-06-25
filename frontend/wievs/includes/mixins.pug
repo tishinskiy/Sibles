@@ -1,0 +1,26 @@
+mixin banerTop(params)
+
+	.top-baner-block(
+		style = " background-image: url(../images/"+params.img+"); height: "+params.banerHeight+"px"
+	)
+		.container
+			if params.header
+				.top-baner-header
+					p=params.header
+			if params.desc
+				.top-baner-desc
+					p=params.desc
+
+
+
+mixin breadcrumbs(items)
+	.breadcrumbs-block-wrap
+		.breadcrumbs-block
+			.container
+				.breadcrumbs-list
+					each item, index in items
+						.breadcrumbs-item
+							if (index != items.length-1)
+								a(href="javascript:;")=item
+							else
+								p=item

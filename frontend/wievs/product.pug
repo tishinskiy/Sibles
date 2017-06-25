@@ -1,0 +1,57 @@
+include includes/mixins.pug
+
+
+doctype html
+html(lang="en")
+	head
+		title= "Sibles product page"
+		meta(charset="utf-8")
+		script(type='text/javascript', src="./scripts/main.js")
+		link(rel="stylesheet", href="./styles/product.css")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500,600,700|PT+Sans:400,400i,700,700i&amp;subset=cyrillic-ext")
+	body
+		include includes/modal.pug
+		.page-wrap
+			include includes/header.pug
+			+breadcrumbs(['Главная', 'проекты', 'коттеджи', 'деревянный дом из клееного бруса 20х15'])
+
+			-
+				var banerProp = {
+					img: 'baner-1.jpg',
+					banerHeight: '812',
+					header: 'деревянный коттедж из клееного бруса 20х15',
+					desc: 'дом, который соберет у очага всю вашу семью'
+				}
+			-
+			+banerTop(banerProp)
+
+			include includes/product-description-block.pug
+			include includes/product-order-types-block.pug
+
+			.site-block
+				.container
+					.text-center
+						h2 холл на втором этаже отлично подойдет в качестве детской игровой комнаты или просто <br>места , где можно проводить время всей семьёй
+
+			include includes/product-carousel-block.pug
+
+			.site-block.bb-dots
+				.container
+					p Уютный деревянный жилом дом с отдельным рабочим кабинетом, несколькими спальнями, просторной гостиной. Встраиваемые шкафы на первом этаже позволят сэкономить жилое пространство, эркер в обеденной зоне расширит помещение. В доме можно установить камин, устроить зимний сад.
+					br
+					p Холл на втором этаже отлично подойдет для детской игровой комнаты или просто места, где можно проводить время всей семьей.
+					br
+					p Архитектура здания отмечена строгой геометрией: в оформлении преобладают прямые горизонтальные линии. Дополнить экстерьер можно с помощью ландшафтного дизайна малых архитектурных форм. В проекте коттеджа предусмотрен навес для машины.
+
+			.site-block
+				.container
+					.text-center
+						h2 все детали дома производятся на заводе индивидуально.<br>Благодаря этому вы получаете отличное качество исполнения и возможность собрать<br>и установить ваш новый дом всего за один сезон
+
+			include includes/consultation-block_2.pug
+			.site-block
+				.container
+					.text-center
+						a.more-projects-button(href="javascript:;") смотреть другие проекты
+
+		include includes/footer.pug
