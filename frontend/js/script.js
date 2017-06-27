@@ -4,6 +4,11 @@
 
 
 	$(document).ready(function(){
+
+		$("[data-fancybox]").fancybox({
+				// Options will go here
+			});
+
 		$(".callback-button, .callback-button-light").click(function(){
 			$.fancybox.open($('.modal-wrap'), {});
 		})
@@ -19,6 +24,24 @@
 				}
 			}
 		})
+
+		var map;
+		if($("#map").length) {
+
+
+			DG.then(function () {
+				map = DG.map('map', {
+					center: [55.084190119666815,82.97772730228381],
+					zoom: 15,
+					boxZoom: false,
+					geoclicker: false,
+					zoomControl: false,
+					fullscreenControl: false,
+					scrollWheelZoom: false,
+				});
+				DG.marker([55.084190119666815,82.97772730228381]).addTo(map);
+			});
+		}
 
 		$(".reference-modal-close").click(function(){
 			$(this).closest(".reference-modal").fadeOut('fast');

@@ -18,13 +18,14 @@ html(lang="en")
 			-
 				var banerProp = {
 					img: 'baner-1.jpg',
+					map: true,
 					banerHeight: '812',
 					header: 'деревянный коттедж из клееного бруса 20х15',
 					desc: 'дом, который соберет у очага всю вашу семью'
 				}
 			-
 			+banerTop(banerProp)
-
+			- var productParams = true
 			include includes/product-description-block.pug
 			include includes/product-order-types-block.pug
 

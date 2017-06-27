@@ -1,0 +1,42 @@
+.workcomrlex-block.site-block
+	.container
+		.text-center
+			h2 преимущества клееного профилированного бруса
+		.workcomplex-list
+			-
+				var items = [
+					{
+						name: 'экологичность',
+						img: 'timber-advantage-1.png',
+						desc: 'Только натуральные материалы и безопасные клеевые основы'
+
+					},
+					{
+						name: 'прочность',
+						img: 'timber-advantage-2.png',
+						desc: 'Прочность клееного бруса выше на 70%, чем у цельного'
+
+					},
+					{
+						name: 'Пожаробезопасность',
+						img: 'timber-advantage-3.png',
+						desc: 'Пожаростойкость 2 класса даже для необработанного спецсоставами клееного бруса'
+
+					},
+					{
+						name: 'долговечность',
+						img: 'timber-advantage-4.png',
+						desc: 'Материал абсолютно не подвержен гниению'
+
+					},
+				]
+			-
+			each val in items
+				.workcomplex-item-wrap
+					.workcomplex-item
+						.workcomplex-item-img
+							img(src="./images/"+val.img)
+						.workcomplex-desc
+							.workcomplex-name
+								p=val.name
+							p!=val.desc

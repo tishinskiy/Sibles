@@ -1,0 +1,42 @@
+.consultation-block_3
+	.container
+		.order-header-wrap_3
+			.order-header
+				h2 адрес офиса и магазина
+				strong Новосибирск, ул. Писемского, 24/2
+				.order-header-phone-block
+					.phone-header
+						p Телефоны:
+					.phone-block
+						p (383) 271-87-37
+						p 8 959 792-94-31
+						p 204-28-82 (тел./факс)
+				.order-header-phone-block
+					.phone-header
+						p E-mail:
+					.phone-block
+						a(href="mailto:sibles@yandex.ru") sibles@yandex.ru
+		.order-form-wrap
+			-
+				var form = {
+					header: 'Пополучить консультацию специалиста::',
+					fields: [
+						{
+							type: 'text',
+							placeholder: 'ваше имя',
+							value: false,
+						},
+						{
+							type: 'text',
+							placeholder: 'телефон',
+							value: false,
+						},
+						{
+							type: 'submit',
+							placeholder: false,
+							value: 'получить консультацию',
+						}
+					],
+				}
+			-
+			include callback-form.pug

@@ -1,0 +1,66 @@
+.portfolio-list-block
+	.container
+		.projects-header.portfolio-header
+			.text-center
+				nav.projects-links
+					a(
+							href="javascript:;"
+							class="project-links-item active"
+						)
+							span  все проекты
+					each val in ["коттеджи", "дома", "бани"]
+
+						a(
+							href="javascript:;"
+							class="project-links-item"
+						)
+							span=val
+
+		.projects-list
+			-
+				var items = [
+					{
+						img: 'portfolio-4.jpg',
+						name: 'Обь гэс',
+						sqr: '338'
+					},
+					{
+						img: 'portfolio-2.jpg',
+						name: 'кудряшовский бор',
+						sqr: '284'
+					},
+					{
+						img: 'portfolio-3.jpg',
+						name: 'баня, красный яр',
+						sqr: '70'
+					},
+					{
+						img: 'portfolio-4.jpg',
+						name: 'кольцово',
+						sqr: '195'
+					},
+					{
+						img: 'portfolio-2.jpg',
+						name: 'петергоф ',
+						sqr: '284'
+					},
+					{
+						img: 'portfolio-3.jpg',
+						name: 'Кронштадт',
+						sqr: '70'
+					}
+				]
+			-
+			each val in items
+				a(
+					href="javascript"
+					class="project-item portfolio-item"
+				)
+					.project-item-img
+						img(src="./images/"+val.img, alt="")
+					.portfolio-item-name
+						p
+							strong=val.name
+						p=val.sqr
+							|  м
+							sup 2

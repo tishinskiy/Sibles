@@ -11,12 +11,12 @@ const cached = require('gulp-cached');
 const path = require('path');
 const browserSync = require('browser-sync').create();
 const pug = require('gulp-pug');
-const order = require("gulp-order");
+const order = require('gulp-order');
 const concat = require('gulp-concat');
 const minifyCSS = require('gulp-minify-css');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
-const notify = require( 'gulp-notify' );
+const notify = require('gulp-notify');
 
 
 gulp.task('styles', function() {
@@ -36,11 +36,11 @@ gulp.task('clean', function() {
 	return del('public');
 });
 
-gulp.task('wiews', function() {
-	return gulp.src(['frontend/wievs/*.pug', '!frontend/**/includes/*.*'])
-		// .pipe(cached('wievs'))
-		// .pipe(remember('wievs'))
-		.pipe(newer('wievs'))
+gulp.task('views', function() {
+	return gulp.src(['frontend/views/*.pug', '!frontend/**/includes/*.*'])
+		// .pipe(cached('views'))
+		// .pipe(remember('views'))
+		// .pipe(newer('views'))
 		.pipe(pug().on ('error', notify.onError({
 			message: "<%= error.message %>",
 			title  : "Pug Error!"
@@ -77,12 +77,12 @@ gulp.task('assets', function() {
 		.pipe(gulp.dest('public'));
 });
 
-gulp.task('build', gulp.series('clean', gulp.parallel('styles', 'assets', 'wiews', 'scripts')));
+gulp.task('build', gulp.series('clean', gulp.parallel('styles', 'assets', 'views', 'scripts')));
 
 gulp.task('watch', function() {
 	gulp.watch('frontend/styles/**/*.*', gulp.series('styles'));
 	gulp.watch('frontend/assets/**/*.*', gulp.series('assets'));
-	gulp.watch('frontend/wievs/**/*.*', gulp.series('wiews'));
+	gulp.watch('frontend/views/**/*.*', gulp.series('views'));
 	gulp.watch('frontend/js/**/*.*', gulp.series('scripts'));
 
 });

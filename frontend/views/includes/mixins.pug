@@ -1,9 +1,12 @@
 mixin banerTop(params)
 
 	.top-baner-block(
-		style = " background-image: url(../images/"+params.img+"); height: "+params.banerHeight+"px"
+		style = " background-image: url(./images/"+params.img+"); height: "+params.banerHeight+"px"
 	)
 		.container
+			if params.map
+				.top-baner-map-icon
+					a(href="javascript:;" data-fancybox="")
 			if params.header
 				.top-baner-header
 					p=params.header

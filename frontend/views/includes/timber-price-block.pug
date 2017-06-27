@@ -1,0 +1,44 @@
+.timber-price-block
+	.container
+		.timber-price-table-wrap
+			-
+				var table = {
+					head: ['Брус', 'Материал', 'Ширина, мм', 'Высота, мм', 'Длина, мм', 'Цена, руб/м3', 'Фото', ''],
+					rows: [
+						['Брус стеновой клееный профилированный', 'Сосна', '162; 202; 220', '133; 163', '6 000', '20 500',],
+
+						['Раскрой и зарезка чашек по проекту', 'Сосна', '162; 202; 220', '133; 163', '-', '2 000',],
+
+						['Брус стеновой клееный профилированный', 'Кедр', '162; 202; 220', '133; 163', '6 000', '20 500',],
+
+						['Раскрой и зарезка чашек по проекту', 'Кедр', '162; 202; 220', '133; 163', '6 000', '2 000',]
+					]
+				}
+			-
+			if table
+				table
+					if table.head
+						thead
+							each value, index in table.head
+								th(class="t-col-" + index)
+									p= value
+					if table.rows
+						tbody
+							each row in table.rows
+								tr
+									each col, index in row
+										if (index == 5)
+											td(class="t-col-" + index)
+												p= col
+													| &#8399;
+										else
+											td(class="t-col-" + index)
+												p= col
+
+									td.t-col-6
+										a(href="./images/koala-11.jpg" class="button_photo image-full" data-fancybox="")
+									td.t-col-7
+										.button-wrap
+											a(href="javascript:;" class="callback-button-light button_3" ) заказать
+
+
